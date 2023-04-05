@@ -1,11 +1,11 @@
-About rio-stac
-==============
+About rio-stac-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/rio-stac-feedstock/blob/main/LICENSE.txt)
 
 Home: https://developmentseed.org/rio-stac/
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/rio-stac-feedstock/blob/main/LICENSE.txt)
 
 Summary: Create STAC Items from raster datasets.
 
