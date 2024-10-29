@@ -1,5 +1,5 @@
 {% set name = "rio-stac" %}
-{% set version = "0.9.0" %}
+{% set version = "0.10.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: c6760e0f3eb6b51b8bd827fd708da757e8231b036cdf0d2fdfbef0fe76ce3a68
+  sha256: 2146302819807eaaf7b93fe5f651405d7b20902c72ade8726fd3d28f73bf1be8
 
 build:
   noarch: python
@@ -18,7 +18,7 @@ build:
 
 requirements:
   host:
-    - flit >=3.2,<4
+    - flit-core >=3.2,<4
     - pip
     - python >=3.8
   run:
