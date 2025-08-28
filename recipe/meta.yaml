@@ -1,5 +1,5 @@
 {% set name = "rio-stac" %}
-{% set version = "0.11.0" %}
+{% set version = "0.11.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 2059fc52ea99616b7d3ad90f90530377d79bff506e27bc2c21fbd7543c722a0a
+  sha256: f966bd10530f07af62128d190bf4af84ef73c6d400482afd7e1c6f0400c76ebf
 
 build:
   noarch: python
