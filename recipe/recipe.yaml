@@ -1,0 +1,54 @@
+schema_version: 1
+
+context:
+  name: rio-stac
+  version: 0.11.1
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
+  sha256: f966bd10530f07af62128d190bf4af84ef73c6d400482afd7e1c6f0400c76ebf
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - stac=rio_stac.scripts.cli:stac
+
+requirements:
+  host:
+    - flit-core >=3.2,<4
+    - pip
+    - python ${{ python_min }}.*
+  run:
+    - rasterio !=1.4.2,>=1.0
+    - python >=${{ python_min }}
+    - pystac >=1.0.0,<2.0.0
+
+tests:
+  - python:
+      imports:
+        - rio_stac
+      pip_check: true
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+    script:
+      - stac --help
+
+about:
+  summary: Create STAC Items from raster datasets.
+  license: MIT
+  license_file: LICENSE
+  homepage: https://developmentseed.org/rio-stac/
+  repository: https://github.com/developmentseed/rio-stac
+
+extra:
+  recipe-maintainers:
+    - thewchan
