@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: rio-stac
-  version: 0.11.1
+  version: "0.11.2"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: f966bd10530f07af62128d190bf4af84ef73c6d400482afd7e1c6f0400c76ebf
+  sha256: cd5dcd938c4e7b84ab811cda6527db4b7acf5b6ed8dd5e672cc5cba33fd55886
 
 build:
   number: 0
